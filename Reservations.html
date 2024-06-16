@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="tranportadmin.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+    <h3>Transport Adminstration</h3>
+    <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+    <h4><a href="Timetable.html">TimeTable</a></h4>
+    <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+    <h4><a href="Routes.html">Routes</a></h4>
+    <h4><a href="Reservations.html">Reservations</a></h4>
+    <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+    <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+    <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <div class="Reservations">
+        <h2>Reservations:</h2>
+        <details>
+            <summary>Available Vehicles</summary>
+            <select id="vehicleList">
+                <!-- JavaScript will populate this list -->
+            </select>
+        </details>
+        <br>
+        <div class="allocation">
+            <form id="reservationForm">
+                <label for="allocation"><b>Allocated the Vehicle?</b></label>
+                <input type="radio" id="yes" name="allocation" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="allocation" value="no">
+                <label for="no">No</label><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Array of available vehicles
+        const vehicles = ['Vehicle 1', 'Vehicle 2', 'Vehicle 3', 'Vehicle 4'];
+
+        // Populate available vehicles in the select dropdown
+        const vehicleList = document.getElementById('vehicleList');
+        vehicles.forEach(vehicle => {
+            const option = document.createElement('option');
+            option.value = vehicle;
+            option.textContent = vehicle;
+            vehicleList.appendChild(option);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('reservationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const isAllocated = document.querySelector('input[name="allocation"]:checked');
+                if (!isAllocated) {
+                    alert('Please select whether the vehicle is allocated or not.');
+                    return;
+                }
+
+                const allocationValue = isAllocated.value;
+                const selectedVehicle = vehicleList.value;
+                alert(`Vehicle: ${selectedVehicle}, Allocated: ${allocationValue}`);
+            });
+        });
+    </script>
+</body>
+</html>

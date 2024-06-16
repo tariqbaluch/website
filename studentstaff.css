@@ -1,0 +1,133 @@
+/* CSS for Header 1 HTML Area */
+#header1 {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+}
+body{
+    background-color: grey;
+}
+#header1 h1 {
+    margin: 10px;
+    float: left;
+}
+
+#header1 img {
+    float: left;
+    margin-right: 10px;
+}
+
+#header1 h5 {
+    margin: 0;
+    float: right;
+}
+
+#header1 h5 a {
+    color: white;
+    text-decoration: none;
+    border-bottom: none;
+    padding: 8px 12px;
+}
+
+#header1 h5 a:hover {
+    background-color: #f2f2f2;
+}
+
+/* CSS for Header 2 HTML Area */
+#header_2 {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+}
+
+#header_2 h2 {
+    margin: 10px;
+    float: left;
+    color: black;
+    padding-top: 10px;
+}
+
+#header_2 h5 {
+    margin: 0;
+    float: left;
+}
+
+#header_2 h5 a {
+    color: white;
+    text-decoration: none;
+    border-bottom: none;
+    padding: 8px 12px;
+}
+
+#header_2 h5 a:hover {
+    background-color: #f2f2f2;
+    color: rgb(229, 6, 6);
+}
+
+/* CSS for Header 3 HTML Area */
+#header3 {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+}
+
+#header3 h2 {
+    margin: 10px;
+    float: left;
+    color: black;
+    padding-top: 10px;
+}
+
+#header3 h4 {
+    margin: 0;
+    float: left;
+}
+
+#header3 h4 a {
+    color: white;
+    text-decoration: none;
+    border-bottom: none;
+    padding: 8px 12px;
+}
+
+#header3 h4 a:hover {
+    background-color: #f2f2f2;
+    color: rgb(229, 6, 6);
+}
+
+/* CSS for Form */
+form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form textarea {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+form button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+form button:hover {
+    background-color: red;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Timetable</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transport Management System</h1>
+    </header>
+
+    <h2>Timetable</h2>
+
+    <table id="timetable" border="1">
+        <tr>
+            <th>Bus No</th>
+            <th>Route</th>
+            <th>Time</th>
+        </tr>
+        <?php
+        $servername = "localhost";
+        $username = "admin";
+        $password = "admin123";
+        $dbname = "trasnport_management";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // SQL to retrieve timetable data
+        $sql = "SELECT * FROM timetable";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo "<tr><td>".$row["bus_no"]."</td><td>".$row["route"]."</td><td>".$row["time"]."</td></tr>";
+            }
+        } else {
+            echo "<tr><td colspan='3'>No timetable available</td></tr>";
+        }
+        $conn->close();
+        ?>
+    </table>
+</body>
+</html>

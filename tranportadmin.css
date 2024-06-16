@@ -1,0 +1,107 @@
+#header_1 {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+}
+
+body {
+  background-color: gray;
+}
+
+#header_1 h1 {
+  margin: 10px;
+  float: left;
+}
+
+#header_1 img {
+  float: left;
+  margin-right: 10px;
+}
+
+#header_1 h5 {
+  margin: 0;
+  float: right;
+}
+
+#header_1 h5 a {
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 8px 12px;
+}
+
+#header_1 h5 a:hover {
+  background-color: #f2f2f2;
+}
+
+#header_2 {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+}
+
+#header_2 h3 {
+  margin: 10px;
+  float: left;
+  color: black;
+  padding-top: 10px;
+}
+
+#header_2 h4 {
+  margin: 0;
+  float: left;
+}
+
+#header_2 h4 a {
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 8px 12px;
+}
+
+#header_2 h4 a:hover {
+  background-color: #f2f2f2;
+  color: rgb(229, 6, 6);
+}
+
+form {
+  text-align: left;
+}
+
+form label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+form input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"] {
+  width: 200px;
+  padding: 8px;
+  margin: 5px 10px;
+  box-sizing: border-box;
+}
+
+form button:hover {
+  background-color: red;
+}

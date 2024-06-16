@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorting Algorithms</title>
+</head>
+<body>
+<h1>Generate Random Numbers:</h1>
+<button id="random-generate" onclick="generateNumbers()">Click Me!</button>
+<p id="ex-1"></p>
+
+<h1>Sorting Algorithms</h1>
+<button id="quicksort" onclick="performQuickSort()">Quick Sort</button>
+<p id="ex-2"></p>
+
+<button id="mergesort" onclick="performMergeSort()">Merge Sort</button>
+<p id="ex-3"></p>
+
+<button id="bubblesort" onclick="performBubbleSort()">Bubble Sort</button>
+<p id="ex-4"></p>
+
+
+<script>
+let numbers = [];
+
+function generateNumbers() {
+  numbers = [];
+  for (let i = 0; i < 100; i++) {
+    numbers.push(Math.floor(Math.random() * 1000)); 
+  }
+  document.getElementById('ex-1').innerText = numbers.join('; ');
+}
+
+function performQuickSort() {
+  const sortedNumbers = quickSort([...numbers]);
+  document.getElementById('ex-2').innerText = sortedNumbers.join('; ');
+}
+
+function performMergeSort() {
+  const sortedNumbers = mergeSort([...numbers]);
+  document.getElementById('ex-3').innerText = sortedNumbers.join('; ');
+}
+
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const leftArr = mergeSort(arr.slice(0, mid));
+  const rightArr = mergeSort(arr.slice(mid));
+
+  return merge(leftArr, rightArr);
+}
+
+function merge(leftArr, rightArr) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+    if (leftArr[leftIndex] < rightArr[rightIndex]) {
+      result.push(leftArr[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(rightArr[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  return result.concat(leftArr.slice(leftIndex), rightArr.slice(rightIndex));
+}
+
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const pivot = arr[arr.length - 1];
+  const leftArr = [];
+  const rightArr = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      leftArr.push(arr[i]);
+    } else {
+      rightArr.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+}
+
+function performBubbleSort() {
+  const sortedNumbers = bubbleSort([...numbers]);
+  document.getElementById('ex-4').innerText = sortedNumbers.join('; ');
+}
+
+function bubbleSort(arr) {
+  const len = arr.length;
+  for (let i = 0; i < len - 1; i++) {
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+</script>
+
+</body>
+</html>

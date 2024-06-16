@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="tranportadmin.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+    <h3>Transport Adminstration</h3>
+    <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+    <h4><a href="Timetable.html">TimeTable</a></h4>
+    <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+    <h4><a href="Routes.html">Routes</a></h4>
+    <h4><a href="Reservations.html">Reservations</a></h4>
+    <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+    <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+    <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <div class="complains">
+        <h2>Complains:</h2>
+        <details>
+            <summary>List of Complains</summary>
+            <ol>
+                <li>"I'm writing to complain about the consistent late arrival of Bus #123 on Route A. Despite the scheduled departure time of 8:00 AM, the bus has been arriving consistently 10-15 minutes late for the past week. </li>
+                <li>"I would like to express my dissatisfaction with the uncomfortable seating arrangements on Bus #456. The seats are worn out and lack adequate cushioning, resulting in discomfort during long journeys.</li>
+            </ol>
+
+        </details>
+        <br>
+
+        <div class="action_taken">
+            <form id="complainForm">
+                <label for="action_taken1"> <b>Action Taken?</b></label>
+                <input type="radio" id="yes" name="actionTaken" value="yes" >
+                <label for="yes">Yes</label>
+                <input type="radio" id="No" name="actionTaken" value="no" >
+                <label for="No">No</label><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('complainForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const actionTaken = document.querySelector('input[name="actionTaken"]:checked');
+            
+            if (actionTaken) {
+                const action = actionTaken.value === 'yes' ? 'taken' : 'not taken';
+                alert(`Action ${action} successfully.`);
+            } else {
+                alert('Please select whether action is taken or not.');
+            }
+        });
+    </script>
+</body>
+</html>

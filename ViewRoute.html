@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="route.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+    <h3>Transport Adminstration</h3>
+    <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+    <h4><a href="Timetable.html">TimeTable</a></h4>
+    <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+    <h4><a href="Routes.html">Routes</a></h4>
+    <h4><a href="Reservations.html">Reservations</a></h4>
+    <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+    <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+    <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3">
+        <h3 style="color: black;">Manage Routes</h3>
+        <h4><a href="Remove_Route.html">Remove Route</a></h4>
+        <h4><a href="ViewRoute.html">View Route</a></h4>
+        <h4><a href="Routes.html">Generate Route</a></h3>
+    </header>
+    <h2>View Routes:</h2>
+    <div id="route">
+        <details>
+            <summary><b>Show Routes</b></summary>
+            <ol id="routeList">
+                <!-- JavaScript will populate this list -->
+            </ol>
+        </details>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const routes = ['Faizabad', 'F-7', 'Baharku'];
+            const routeList = document.getElementById('routeList');
+
+            routes.forEach(route => {
+                const li = document.createElement('li');
+                li.textContent = route;
+                routeList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+        <h3>Transport Administration</h3>
+        <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+        <h4><a href="Timetable.html">TimeTable</a></h4>
+        <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+        <h4><a href="Routes.html">Routes</a></h4>
+        <h4><a href="Reservations.html">Reservations</a></h4>
+        <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+        <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+        <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3">
+        <h2 style="color: black;">Manage Timetable</h2>
+        <h4><a href="Add_timetable.html">Add Timetable</a></h4>
+        <h4><a href="UpdateTimetable.html">Update Timetable</a></h4>
+        <h4><a href="Deletetimetable.html">Delete Timetable</a></h4>
+        <h4><a href="Timetable.html">View Timetable</a></h4>
+    </header>
+
+    <h2>Delete Timetable</h2>
+    <form id="deleteTimetableForm" action="deletetime.php" method="post">
+        <label for="delete"><b>Are you sure you want to delete the timetable?</b></label>
+        <input type="radio" id="yes" name="confirmation" value="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="confirmation" value="no">
+        <label for="no">No</label><br><br>
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

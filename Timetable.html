@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>s
+    </header>
+    <header id="header_2">
+    <h3>Transport Adminstration</h3>
+    <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+    <h4><a href="Timetable.html">TimeTable</a></h4>
+    <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+    <h4><a href="Routes.html">Routes</a></h4>
+    <h4><a href="Reservations.html">Reservations</a></h4>
+    <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+    <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+    <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3">
+        <h2 style="color: black;">Manage Timetable</h2>
+        <h4><a href="Add_timetable.html">Add Timetable</a></h4>
+        <h4><a href="UpdateTimetable.html">Update Timetable</a></h4>
+        <h4><a href="Deletetimetable.html">Delete Timetable</a></h4>
+        <h4><a href="Timetable.html">View Timetable</a></h3>
+    </header>
+    <div id="view_table" >
+        <h2>View Timetable</h2>
+        <table>
+            <tr>
+                <th>Bus No</th>
+                <th>Route</th>
+                <th>Time</th>
+            </tr>
+            
+        </table>
+
+    </div>
+
+    <script>
+        var userRole = "admin"; // Change this value as per your implementation
+    
+        if (userRole === "admin") {
+            
+            document.getElementById("header_2").style.display = "block";
+           
+            document.getElementById("header3").style.display = "block";
+        } else {
+           
+            document.getElementById("header_2").style.display = "none";
+            
+            document.getElementById("header3").style.display = "block";
+           
+            document.querySelectorAll("#header3 h4:not(:last-child)").forEach(function(item) {
+                item.style.display = "none";
+            });
+        }
+    
+        var timetableData = [
+            { busNo: 1, route: "Route A", time: "08:00 AM" },
+            { busNo: 2, route: "Route B", time: "09:30 AM" },
+            { busNo: 3, route: "Route C", time: "11:00 AM" }
+        ];
+    
+        var timetableTable = document.getElementById("view_table").querySelector("table");
+    
+        timetableData.forEach(function(row) {
+            var tr = document.createElement("tr");
+            tr.innerHTML = "<td>" + row.busNo + "</td><td>" + row.route + "</td><td>" + row.time + "</td>";
+            timetableTable.appendChild(tr);
+        });
+    </script>
+</body>
+</html>

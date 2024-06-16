@@ -1,0 +1,62 @@
+#header1 {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#header1 h1 {
+  margin: 10px;
+  float: left;
+}
+
+body {
+  background-color: gray;
+}
+
+#header1 h5 {
+  margin: 0;
+  float: right;
+}
+
+#header1 h5 a {
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 8px 12px;
+}
+
+#header1 h5 a:hover {
+  background-color: #f2f2f2;
+  color: rgb(229, 6, 6);
+}
+
+/* Additional CSS for Login Section */
+#login_user {
+  text-align: left;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#login_user h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+#login_user h3 {
+  margin: 5px 0;
+  margin-bottom: 5px;
+}
+
+#login_user h3 a {
+  color: #333333;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: white;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+#login_user h3 a:hover {
+  color: #e60909;
+}

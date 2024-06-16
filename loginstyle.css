@@ -1,0 +1,77 @@
+/* CSS for Login Page */
+/* CSS for Header HTML Area */
+#header1 {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#header1 h1 {
+  margin: 10px;
+  float: left;
+}
+
+#header1 img {
+  float: left;
+  margin-right: 10px;
+}
+
+#header1 h5 {
+  margin: 0;
+  float: right;
+}
+
+#header1 h5 a {
+  color: white;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 8px 12px;
+}
+
+#header1 h5 a:hover {
+  background-color: #f2f2f2;
+  color: rgb(229, 6, 6);
+}
+
+body {
+  background-color: grey;
+}
+
+#login {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+#login h2 {
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+#loginform label {
+  margin-top: 20px;
+  display: inline-block;
+  text-align: right;
+  margin-left: 1px;
+}
+
+#loginform input {
+  margin: 3px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(241, 9, 71);
+}

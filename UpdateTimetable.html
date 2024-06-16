@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+        <h3>Transport Administration</h3>
+        <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+        <h4><a href="Timetable.html">TimeTable</a></h4>
+        <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+        <h4><a href="Routes.html">Routes</a></h4>
+        <h4><a href="Reservations.html">Reservations</a></h4>
+        <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+        <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+        <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3">
+        <h2 style="color: black;">Manage Timetable</h2>
+        <h4><a href="Add_timetable.html">Add Timetable</a></h4>
+        <h4><a href="UpdateTimetable.html">Update Timetable</a></h4>
+        <h4><a href="Deletetimetable.html">Delete Timetable</a></h4>
+        <h4><a href="Timetable.html">View Timetable</a></h4>
+    </header>
+
+    <h2 style="color: black;">Update Timetable</h2>
+    <form id="updateTimetableForm">
+        <label for="busno"><b>Bus No:</b></label>
+        <input type="number" name="busno" id="busno" required><br><br>
+        <label for="route"><b>Route:</b></label>
+        <input type="text" name="route" id="route" required><br><br>
+        <label for="time"><b>Time:</b></label>
+        <input type="time" name="time" id="time" required><br><br>
+        <button type="button" onclick="updateTimetable()">Update</button>
+    </form>
+
+    <script>
+        function updateTimetable() {
+            var busNo = document.getElementById('busno').value;
+            var route = document.getElementById('route').value;
+            var time = document.getElementById('time').value;
+
+            if (!busNo || !route || !time) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            if (!confirm("Are you sure you want to update the timetable?")) {
+                return;
+            }
+            resetForm();
+
+            alert("Timetable updated successfully!");
+        }
+
+        function resetForm() {
+            document.getElementById('busno').value = '';
+            document.getElementById('route').value = '';
+            document.getElementById('time').value = '';
+        }
+    </script>
+</body>
+</html>

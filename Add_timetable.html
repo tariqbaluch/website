@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2">
+        <h3>Transport Administration</h3>
+        <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+        <h4><a href="Timetable.html">TimeTable</a></h4>
+        <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+        <h4><a href="Routes.html">Routes</a></h4>
+        <h4><a href="Reservations.html">Reservations</a></h4>
+        <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+        <h4><a href="tranpostadmin.html">Add Driver</a></h4>
+        <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3">
+        <h2 style="color: black;">Manage Timetable</h2>
+        <h4><a href="Add_timetable.html">Add Timetable</a></h4>
+        <h4><a href="UpdateTimetable.html">Update Timetable</a></h4>
+        <h4><a href="Deletetimetable.html">Delete Timetable</a></h4>
+        <h4><a href="Timetable.html">View Timetable</a></h4>
+    </header>
+
+    <h2>Add Timetable</h2>
+    <form action="addtimetable.php" method="post" id="timetableForm">
+        <label for="busno"><b>Bus No:</b></label>
+        <input type="number" name="busno" id="busno" required><br><br>
+        <label for="Route"><b>Route:</b></label>
+        <input type="text" name="route" id="route" required><br><br>
+        <label for="time"><b>Time:</b></label>
+        <input type="time" name="time" id="time" required><br><br>
+        <button type="submit" id="insertButton">Insert</button>
+    </form>
+</body>
+</html>

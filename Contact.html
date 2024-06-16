@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div id="header1">
+        <header>
+            <img style="float: left;" src="QAU-Logo.webp" alt="QAU-Logo" width="90px" height="69px">
+            <h1>Tranport Management System</h1>
+            
+        
+        <h5><a href="Contact.html">Contact Us</a> </h5>
+        <h5><a href="index.html">Home</a> </h5>
+     </header>
+    </div>
+
+    <div id="Contact_info">
+        <img src="address logo.jpg" alt="address image" width="50">
+        <h2>Address</h2>
+        <p>Quaid-i-Azam University <br>near Baharku, Islamabad</p>
+        <img src="call logo.png" alt="call symbol" width="50">
+        <h2>Phone</h2>
+        <p>03162874234<br>
+            03322336543
+        </p>
+        <img src="email logo.png" alt="email_symbol" width="50">
+        <h2>Email</h2>
+        <p>info@qau.edu.pk</p>
+    </div>
+
+    <div id="contact_form">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+            this.reset();
+
+            alert('Your message has been sent. Thank you!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Management System</title>
+    <link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+    <header id="header_1">
+        <img src="QAU-Logo.webp" alt="QAU-Logo" width="80">
+        <h1>Transport Management System</h1>
+    </header>
+    <header id="header_2" style="display:none;">
+        <h3 id="adminHeader">Transport Adminstration</h3>
+        <h4><a href="Manage_Fuel.html">Manage Fuel</a></h4>
+        <h4><a href="tranpostadmin.html">TimeTable</a></h4>
+        <h4><a href="Assign_Duties.html">Assign Duties</a></h4>
+        <h4><a href="Routes.html">Routes</a></h4>
+        <h4><a href="Reservations.html">Reservations</a></h4>
+        <h4><a href="Add_Conductor.html">Add Conductor</a></h4>
+        <h4><a href="Add_Driver.html">Add Driver</a></h4>
+        <h4><a href="Complains.html">Complains</a></h4>
+    </header> 
+    <header id="header3" style="display:none;">
+        <h2 style="color: black;">Manage Timetable</h2>
+        <h4><a href="Timetable.html">View Timetable</a></h4>
+        <h4><a href="Add_timetable.html">Add Timetable</a></h4>
+        <h4><a href="UpdateTimetable.html">Update Timetable</a></h4>
+        <h4><a href="Deletetimetable.html">Delete Timetable</a></h4>
+    </header>
+    <div id="view_table">
+        <h2>View Timetable</h2>
+        <table id="timetable">
+            <tr>
+                <th>Bus No</th>
+                <th>Route</th>
+                <th>Time</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var userRole = "admin";
+
+        if (userRole === "admin") {
+            document.getElementById("header_2").style.display = "block";
+            document.getElementById("adminHeader").style.display = "block";
+            document.getElementById("header3").style.display = "block";
+        } else {
+            document.getElementById("header_2").style.display = "none";
+            document.getElementById("header3").style.display = "none";
+            // Show only "View Timetable" option for non-admin users
+            var header3Links = document.querySelectorAll("#header3 h4 a");
+            header3Links.forEach(function(link) {
+                if (link.textContent !== "View Timetable") {
+                    link.parentElement.style.display = "none";
+                }
+            });
+            document.getElementById("header3").style.display = "block";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var timetableData = [
+                { busNo: 2, route: 'faizabad', time: '2:00' },
+                { busNo: 5, route: 'baharku', time: '4:00' },
+                { busNo: 34, route: 'F-6', time: '4:00' }
+            ];
+
+            var timetableTable = document.getElementById('timetable');
+            timetableData.forEach(function(item) {
+                var row = timetableTable.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.textContent = item.busNo;
+                cell2.textContent = item.route;
+                cell3.textContent = item.time;
+            });
+        });
+    </script>
+</body>
+</html>
